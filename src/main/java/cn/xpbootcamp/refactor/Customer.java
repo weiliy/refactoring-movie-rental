@@ -31,9 +31,7 @@ public class Customer {
             //determine amounts for each line
             double thisAmount = each.getAmount();
             //add frequent renter points
-            frequentRenterPoints++;
-            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
-                frequentRenterPoints++;
+            frequentRenterPoints += each.getPoints();
 
             //show figures for this rental
             result.append("\t")
